@@ -1,6 +1,6 @@
-#test buildint Spark development environment
+#test building Spark development environment
 
-#version 0.0.2
+#version 0.2.1
 FROM adolphlwq/ubuntu:14.04_64_base_image
 MAINTAINER adolphlwq <kenan3015@gmail.com>
 
@@ -18,10 +18,10 @@ RUN cd /opt && wget http://mirrors.hust.edu.cn/apache/spark/spark-1.3.1/spark-1.
 
 #install java
 RUN cd /opt && wget http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-i586.tar.gz
-#config jdk,scala,tomcat and spark
+
 #RUN cat /opt/env_config >> /etc/bash.bashrc && rm /opt/env_config*
 
 #LABEL JDK_VERSION="1.8.0_45" SCALA_VERSION="2.11.6" SPARK_VERSION="1.3.1" HADOOP_VERSION="2.6"
 
 #CMD ["/bin/bash", "spark-shell", "--master", "local[2]"]
-CMD ["bin/bash"]
+ENTERPOINT ["bin/bash"]
