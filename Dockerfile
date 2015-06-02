@@ -14,7 +14,7 @@ RUN cd /opt && wget http://downloads.typesafe.com/scala/2.11.6/scala-2.11.6.tgz
 #RUN tar -xzvf scala-2.11.6.tgz && rm scala-2.11.6.tgz && mv scala-2.11.6/ scala
 
 #install spark-hadoop-2.6+
-#RUN wget http://mirrors.hust.edu.cn/apache/spark/spark-1.3.1/spark-1.3.1-bin-hadoop2.6.tgz
+RUN wget http://mirrors.hust.edu.cn/apache/spark/spark-1.3.1/spark-1.3.1-bin-hadoop2.6.tgz
 #config jdk,scala,tomcat and spark
 #RUN cat /opt/env_config >> /etc/bash.bashrc && rm /opt/env_config*
 
