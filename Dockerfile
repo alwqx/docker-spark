@@ -1,7 +1,7 @@
 #test buildint Spark development environment
 
 #version 0.0.2
-FROM adolphlwq/ubuntu:14.04_64_base_image
+FROM adolphlwq/ubuntu
 MAINTAINER adolphlwq <kenan3015@gmail.com>
 
 ENV REFRESHED_AT 2015-6-1
