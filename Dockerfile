@@ -17,14 +17,13 @@ RUN cd /opt && wget http://downloads.typesafe.com/scala/2.11.6/scala-2.11.6.tgz 
 RUN cd /opt && wget http://mirrors.hust.edu.cn/apache/spark/spark-1.3.1/spark-1.3.1-bin-hadoop2.6.tgz && tar -xvf spark-1.3.1-bin-hadoop2.6.tgz && rm spark-1.3.1-bin-hadoop2.6.tgz
 
 #install java
-RUN cd /opt && wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-x64.tar.gz"
+RUN cd /opt && wget --no-cookies --no-check-certificate --header "Cookie: oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u45-b14/jdk-8u45-linux-x64.tar.gz" && tar -xvf jdk-8u45-linux-x64.tar.gz && rm jdk-8u45-linux-x64.tar.gz
 
-#unpack scala-2.11.6.tgz spark-1.3.1-bin-hadoop2.6.tgz jdk-8u45-linux-i586.tar.gz
-#RUN cd /opt && tar -xzf scala-2.11.6.tgz && tar -xzf spark-1.3.1-bin-hadoop2.6.tgz
+#cinfig scala and java environmewnt
+ADD env_config /opt/ 
+RUN cat /opt/env_config >> /etc/bash.bashrc && rm /opt/env_config*
 
-#RUN cat /opt/env_config >> /etc/bash.bashrc && rm /opt/env_config*
-
-#LABEL JDK_VERSION="1.8.0_45" SCALA_VERSION="2.11.6" SPARK_VERSION="1.3.1" HADOOP_VERSION="2.6"
+LABEL JDK_VERSION="1.8.0_45" SCALA_VERSION="2.11.6" SPARK_VERSION="1.3.1" HADOOP_VERSION="2.6"
 
 #CMD ["/bin/bash", "spark-shell", "--master", "local[2]"]
 ENTRYPOINT ["bin/bash"]
