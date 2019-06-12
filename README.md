@@ -1,16 +1,22 @@
-## Spark Instro
+# Spark docker image
+[![Docker Pulls](https://img.shields.io/docker/pulls/adolphlwq/docker-spark.svg?maxAge=2592000)]()
 
-### Note
-This repo is a basic repo and will not update. For further usage I suggest you browser bellow projects:
-- [docker spark](https://github.com/dockerq/docker-spark): install spark and mesos on docker.You can run this image on Mesos stack od [DC/OS](https://github.com/dcos)
-- [docker jupyter](https://github.com/dockerq/docker-jupyter): run spark on jupyter. You can explore data and spark via jupyter.
+## Info
+- Spark 1.6.0
+- Mesos 0.28.1
+- Jre 1.7
 
-### Env
-* ubuntu14.04 64bit
+## Usage
+- SPARK_HOME :`/usr/local/spark-1.6.0-bin-hadoop2.6`
+- Try on docker image
 
-### Use cases
+  ```
+  sudo docker run -it --name spark-try --net host adolphlwq/docker-spark bash
+  ```
+## Use cases
 * Learn and practice Spark.
 * Machine learning and Data mining.
 * Quickly setup spark env
 
-[GitHub url](https://github.com/adolphlwq/Docker-spark-test)
+## TODOs
+No todos. Any issues is welcome.
